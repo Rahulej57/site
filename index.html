@@ -9,9 +9,9 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #807878b2; /* Light gray background */
-            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L10 10 M10 0 L0 10' stroke='%23ccc' stroke-width='1' fill='none'/%3E%3C/svg%3E"); /* Subtle grid pattern */
-            background-size: 20px 20px; /* Adjust grid size as needed */
+            background-color: #f1f1f1; /* Light background color */
+            background-image: radial-gradient(circle, #cccccc 1px, transparent 1px);
+            background-size: 20px 20px; /* Controls the size of the dots */
         }
 
         .container {
@@ -48,6 +48,7 @@
             cursor: pointer;
             font-size: 1.2rem;
             margin-right: 10px;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
