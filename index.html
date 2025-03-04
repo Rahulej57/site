@@ -1,90 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FV2X77WBT1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FV2X77WBT1');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Background Animation</title>
     <style>
-        /* Global Styles */
         body {
-            font-family: 'Helvetica', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #121212; /* Dark background */
+            background: linear-gradient(135deg, #1a1a1a, #121212);
             color: #fff;
-            text-align: center;
             overflow: hidden;
-        }
-
-        /* Container Styles */
-        .container {
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-            padding: 60px 80px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-            width: 500px;
             position: relative;
-            z-index: 10;
-            transition: all 0.5s ease;
         }
 
-        h1 {
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .container h1 {
             font-size: 3rem;
-            margin-bottom: 30px;
-            color: #ffeb3b; /* Light yellow */
-            text-shadow: 0 0 10px rgba(255, 235, 59, 0.7); /* Glowing yellow text */
+            margin: 20px 0;
+            animation: fadeInUp 1.5s ease-in-out;
+            background: linear-gradient(135deg, #ffeb3b, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            color: #ccc;
-        }
-
-        a {
-            text-decoration: none;
-            color: #ffeb3b; /* Light yellow */
-            font-weight: bold;
-        }
-
-        /* Button Styles */
-        button {
-            background: #ffeb3b; /* Light yellow */
-            color: #121212;
-            padding: 20px 40px;
+        .container p {
             font-size: 1.2rem;
-            border: 2px solid #ffeb3b; /* Light yellow border */
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 20px rgba(255, 235, 59, 0.4); /* Light yellow shadow */
+            animation: fadeInUp 2s ease-in-out;
+            background: linear-gradient(135deg, #ffeb3b, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        button:hover {
-            background: #ff79c6; /* Soft pastel pink */
-            color: #121212;
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(255, 121, 198, 0.7); /* Glowing pink effect on hover */
+        .container a {
+            color: #ffeb3b;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid #ffeb3b;
+            padding-bottom: 3px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
 
-        button:focus {
-            outline: none;
+        .container a:hover {
+            color: #ff5722;
+            border-bottom-color: #ff5722;
         }
 
-        /* Responsive Design */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         @media (max-width: 500px) {
             .container {
                 width: 90%;
@@ -92,7 +105,7 @@
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             p {
@@ -105,23 +118,39 @@
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div id="particles-js"></div>
+
     <div class="container">
-        <h1>Contact Me</h1>
-        <p>
-            Feel free to send an email to <a href="mailto:tye@pronoob.live">tye@pronoob.live</a>
-        </p>
-        <button id="emailBtn">Email Me</button>
+        <h1>Welcome to Our Website</h1>
+        <p>If you have any questions, feel free to reach out to us at <a href="mailto:tye@pronoob.live">tye@pronoob.live</a>.</p>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Email button click to open the email client
-        document.getElementById("emailBtn").onclick = function() {
-            window.location.href = "mailto:tye@pronoob.live"; // Trigger the email client
-        }
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ffeb3b' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.7, anim: { enable: true, speed: 0.5, opacity_min: 0.3 } },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: '#ffeb3b', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, out_mode: 'out' }
+            },
+            interactivity: { 
+                detect_on: 'canvas', 
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                modes: { 
+                    repulse: { distance: 100, duration: 0.5 },
+                    push: { particles_nb: 4 } 
+                }
+            },
+            retina_detect: true
+        });
     </script>
-
 </body>
 </html>
