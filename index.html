@@ -1,156 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a, #121212);
-            color: #fff;
-            overflow: hidden;
-            position: relative;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a1a, #121212);
+      color: #fff;
+      position: relative;
+    }
 
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
 
-        .container {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            animation: fadeInUp 1s ease-in-out;
-        }
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+      max-width: 1000px;
+      width: 90%;
+      margin-top: 100px;
+    }
 
-        .container h1 {
-            font-size: 3rem;
-            margin: 20px 0;
-            animation: fadeInUp 1.5s ease-in-out;
-            background: linear-gradient(135deg, #ffeb3b, #ff5722);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .container h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffeb3b, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .container p {
-            font-size: 1.2rem;
-            animation: fadeInUp 2s ease-in-out;
-            background: linear-gradient(135deg, #ffeb3b, #ff5722);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
 
-        .container a {
-            color: #ffeb3b;
-            font-weight: bold;
-            text-decoration: none;
-            border-bottom: 2px solid #ffeb3b;
-            padding-bottom: 3px;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-        }
+    iframe {
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ffeb3b88;
+      flex: 1 1 300px;
+      max-width: 640px;
+      height: 360px;
+    }
 
-        .container a:hover {
-            color: #ff5722;
-            border-bottom-color: #ff5722;
-        }
+    .contact-info {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, #ffeb3b, #ff5722);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .contact-info a {
+      color: #ffeb3b;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #ffeb3b;
+      padding-bottom: 3px;
+      transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .contact-info a:hover {
+      color: #ff5722;
+      border-bottom-color: #ff5722;
+    }
 
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+    @media (max-width: 700px) {
+      iframe {
+        flex: 1 1 100%;
+        height: 240px;
+      }
 
-        @media (max-width: 500px) {
-            .container {
-                width: 90%;
-                padding: 30px;
-            }
+      .container h1 {
+        font-size: 2rem;
+      }
 
-            h1 {
-                font-size: 2.5rem;
-            }
+      .contact-info {
+        font-size: 1rem;
+      }
+    }
 
-            p {
-                font-size: 1.1rem;
-            }
-
-            button {
-                width: 100%;
-                padding: 15px;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div id="particles-js"></div>
 
-    <div id="particles-js"></div>
+  <div class="container">
+    <h1></h1>
 
-    <div class="container">
-        <h1>Welcome to Our Website</h1>
-        <p>If you have any questions, feel free to reach out to us at <a href="mailto:tye@pronoob.live">tye@pronoob.live</a>.</p>
+    <div class="videos">
+      <iframe
+        src="https://drive.google.com/file/d/1dBFCeDx3GVgtPV_01rUaY3JkXfUoWYhV/preview"
+        allow="autoplay"
+        allowfullscreen
+        loading="lazy"
+        title="Video 1"
+      ></iframe>
+
+      <iframe
+        src="https://drive.google.com/file/d/10wBWTa3PgU8QZRC6oKEYSUk-5jqJLMIT/preview"
+        allow="autoplay"
+        allowfullscreen
+        loading="lazy"
+        title="Video 2"
+      ></iframe>
+
+      <iframe
+        src="https://drive.google.com/file/d/1XAbBmr48vVcm3FZOi3NLf7waKy-DTnCu/preview"
+        allow="autoplay"
+        allowfullscreen
+        loading="lazy"
+        title="Video 3"
+      ></iframe>
+
+      <iframe
+        src="https://drive.google.com/file/d/1AHblob8_Ma9a5_7cisX9IEJAXBuGbC9k/preview"
+        allow="autoplay"
+        allowfullscreen
+        loading="lazy"
+        title="Video 4"
+      ></iframe>
+
+      <iframe
+        src="https://drive.google.com/file/d/1jSkjNbIwwYdtjwKkHEXmlwcaVMTH7AhQ/preview"
+        allow="autoplay"
+        allowfullscreen
+        loading="lazy"
+        title="Video 5"
+      ></iframe>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#ffeb3b' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.7, anim: { enable: true, speed: 0.5, opacity_min: 0.3 } },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#ffeb3b', opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 2, out_mode: 'out' }
-            },
-            interactivity: { 
-                detect_on: 'canvas', 
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
-                modes: { 
-                    repulse: { distance: 100, duration: 0.5 },
-                    push: { particles_nb: 4 } 
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+    <p class="contact-info">
+     reach out
+      <a href="mailto:tye@pronoob.live">tye@pronoob.live</a>.
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#ffeb3b' },
+        shape: { type: 'circle' },
+        opacity: {
+          value: 0.7,
+          anim: { enable: true, speed: 0.5, opacity_min: 0.3 },
+        },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ffeb3b',
+          opacity: 0.4,
+          width: 1,
+        },
+        move: { enable: true, speed: 2, out_mode: 'out' },
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.5 },
+          push: { particles_nb: 4 },
+        },
+      },
+      retina_detect: true,
+    });
+  </script>
 </body>
 </html>
